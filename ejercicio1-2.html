@@ -7,11 +7,96 @@
     <style>
         body{
             font-family: arial, sans-serif;
-            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+        /*Estilo barra de navegación*/
+        .navbarra{
+            display: flex;
+            justify-content: center; /*centrar horizontalmente*/
+            align-items: center; /*verticalmente*/
+            background-color: blueviolet;
+            padding: 15px;
+        }
+        .navbarra a{
+            color: aquamarine;
+            text-decoration: none;
+            padding: 10px 30px;
+            margin: 0 15px; /*Espaciar entre elementos*/
+            font-size: 20px;
+        }
+        /*pantalla pequeña*/
+        @media (max-width: 600px){
+            .navbarra{
+                flex-direction: column;/*apilar elementos verticalmente*/
+            }
+            .navbarra a{
+                margin: 5px 0; /*ajustar espaciado*/
+                font-size: 18px;
+            }
+        }
+        /*estilo para galeria*/
+        .galeria{
+            display: grid;
+            gap: 10px;/*espacio entre elementos*/
+            padding: 5px;
+            justify-items: center;
+            padding-top: 20px;
+        }
+        /*Pantalla pequeña en columnas*/
+        .galeria{
+            grid-template-columns: 1fr;
+        }
+        .nav-menu{
+            font-size: 7px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        /*Pantallas*/
+        @media (min-width: 600px){
+            .galeria{
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        /*Pantalla Grande*/
+        @media(min-width:1200px){
+            .galeria{
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+        }
+        .galeria img{
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px;
+            background-color: aliceblue;
+        }
+        .logo img{
+            width: 100px;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    
+    <nav class="navbarra">
+        <div class="logo">
+            <img src="" alt="logo"> 
+        </div>
+        <div class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <div class="galeria">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+    </div>
 </body>
 </html>
